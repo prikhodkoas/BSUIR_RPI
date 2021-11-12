@@ -68,6 +68,38 @@ describe('08-objects-tasks', function() {
     });
 
 
+    /*it.optional('fromJSON should return the object of specified type from JSON representation', function () {
+        var MockType = function(a,b,c) {
+            this.a = a;
+            this.b = b;
+            this.c = c;
+        };
+
+        [
+            {
+                proto: tasks.Rectangle.prototype,
+                json: '{ "width":10, "height":20 }',
+                expected: new tasks.Rectangle(10, 20)
+            },{
+                proto: MockType.prototype,
+                json: '{ "a":10, "b":20, "c":30 }',
+                expected: new MockType(10,20,30)
+            }
+        ].forEach(data => {
+            var actual = tasks.fromJSON(data.proto, data.json);
+            assert.deepEqual(
+                actual,
+                data.expected,
+                'fromJson method shoud restore all properties from json'
+            );
+            assert.equal(
+                actual.__proto__,
+                data.expected.__proto__,
+                'fromJson method shoud restore type from prototype argument'
+            );
+        });
+    });*/
+
     it.optional('fromJSON should return the object of specified type from JSON representation', function () {
         var MockType = function(a,b,c) {
             this.a = a;
@@ -99,7 +131,6 @@ describe('08-objects-tasks', function() {
             );
         });
     });
-
 
     it.optional('cssSelectorBuilder should creates css selector object with stringify() method', function () {
         const builder = tasks.cssSelectorBuilder;
